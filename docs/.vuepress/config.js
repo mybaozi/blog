@@ -32,6 +32,10 @@ module.exports = {
             path: '/view/technology/function',
           },
           {
+            title: '闭包',
+            path: '/view/technology/closure'
+          },
+          {
             title: '事件循环',
             path: '/view/technology/task'
           },

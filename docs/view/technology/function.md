@@ -24,22 +24,36 @@ __手写 `call` `apply` `bind`__
 ```js
     Function.prototype.myCall = function(target,...params){
         let key = Symbol();
-        target[key] = this;
+        // target[key] = this;
+        Object.prototype[key] = this;
         let result = target[key](...params);
-        delete target[key];
+        // delete target[key];
+        delete Object.prototype[key];
         return result;
     }
 
     Function.prototype.myCall = function(target,params){
         if(Array.isArray(params)) throw('第二个参数只接受数组类型')
         let key = Symbol();
-        target[key] = this;
+        // target[key] = this;
+        Object.prototype[key] = this;
         let result = target[key](...params);
-        delete target[key];
+        // delete target[key];
+        delete Object.prototype[key];
         return result;
     }
 
-    Function.prototype.bind = function(){
-        
+    Function.prototype.myBind = function(target,...params){
+        return ()=>{
+            let key = Symbol();
+            // target[key] = this;
+            Object.prototype[key] = this;
+            let result = target[key](...params);
+            // delete target[key];
+            delete Object.prototype[key];
+            return result;
+        }
     }
 ```
+
+直接在对象上赋值方法时如果该方法有打印 `this` 的值会发现对象里多了个symbol类型字段，故做了修改。  
