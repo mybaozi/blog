@@ -36,6 +36,10 @@ module.exports = {
             path: '/view/technology/closure'
           },
           {
+            title: '原型',
+            path: '/view/technology/prototype'
+          },
+          {
             title: '事件循环',
             path: '/view/technology/task'
           },
