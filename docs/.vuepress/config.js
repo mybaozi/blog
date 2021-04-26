@@ -36,17 +36,17 @@ module.exports = {
             path: '/view/technology/closure'
           },
           {
-            title: '原型',
+            title: '原型和原型链',
             path: '/view/technology/prototype'
           },
           {
             title: '事件循环',
             path: '/view/technology/task'
           },
-          // {
-          //   title: 'Object.defineProperty',
-          //   path: '/view/technology/'
-          // }
+          {
+            title: 'Promise',
+            path: '/view/technology/promise'
+          }
         ]
       },
       {
@@ -56,6 +56,12 @@ module.exports = {
             title: '响应式原理',
             path: '/view/vue/response-principle'
           }
+        ]
+      },
+      {
+        title: '开发问题',
+        children: [
+
         ]
       }
     ]
