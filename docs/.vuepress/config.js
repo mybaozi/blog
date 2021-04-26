@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Baolog',
-  base:'blog',
+  base:'/blog/',
   description: 'Just playing around',
   themeConfig: { //导航栏
     logo:'',
