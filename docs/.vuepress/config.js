@@ -47,6 +47,14 @@ module.exports = {
           {
             title: 'Promise',
             path: '/view/technology/promise'
+          },
+          {
+            title: 'Typescript',
+            path: '/view/technology/typescript'
+          },
+          {
+            title: '生成器和迭代器',
+            path: '/view/technology/generator&iterator'
           }
         ]
       },

@@ -32,7 +32,7 @@ __手写 `call` `apply` `bind`__
         return result;
     }
 
-    Function.prototype.myCall = function(target,params){
+    Function.prototype.myApply = function(target,params){
         if(Array.isArray(params)) throw('第二个参数只接受数组类型')
         let key = Symbol();
         // target[key] = this;
