@@ -44,6 +44,21 @@ __类型注解__
     A = 'a',
     B = 'b'
   }
+
+  /**
+    函数类型
+  */
+  let fn: (x:number,y:number) => number = function(x:number,y:number):number{
+    return x + y;
+  }
+
+  let fn = function(x:number = 1,y?:number):number{
+    if(!y) {
+      return x + y;
+    }else{
+      return x;
+    }
+  }
 ```
 
 
@@ -63,4 +78,17 @@ __接口__
   greeter(user);
 ```
 
+__泛型__
+```js
+  //定义泛型函数
+  function fn<T>(arg:T):T{
+    return arg;
+  }
 
+  //调用泛型函数
+  let result = fn<string>('string')
+
+  //也可以省略<string>
+  let result = fn('string')
+  
+```

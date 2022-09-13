@@ -55,6 +55,14 @@ module.exports = {
           {
             title: '生成器和迭代器',
             path: '/view/technology/generator&iterator'
+          },
+          {
+            title: 'class',
+            path: '/view/technology/class'
+          },
+          {
+            title: 'nginx',
+            path: '/view/technology/nginx'
           }
         ]
       },
@@ -64,6 +72,15 @@ module.exports = {
           {
             title: '响应式原理',
             path: '/view/vue/response-principle'
+          }
+        ]
+      },
+      {
+        title: 'Webpack',
+        children: [
+          {
+            title: 'Webpack',
+            path: '/view/webpack/basic'
           }
         ]
       },
