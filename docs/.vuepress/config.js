@@ -85,6 +85,15 @@ module.exports = {
         ]
       },
       {
+        title: 'Java',
+        children: [
+          {
+            title: '学习笔记',
+            path: '/view/java/note'
+          }
+        ]
+      },
+      {
         title: '开发问题',
         children: [
 
