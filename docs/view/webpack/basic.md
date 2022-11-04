@@ -15,7 +15,8 @@ __核心概念__
     entry: './index.js',
     output: {
       path: path.resolve(__dirname, 'dist'), // __dirname 文件当前所在位置的路径
-      filename: 'dist.js'
+      filename: 'dist.js',
+      clean: true, // 在生成文件之前清空 output目录
     }
   }
 ```
@@ -104,4 +105,60 @@ __webpack-dev-server__
       }
     }
   }
+```
+
+## 代码分离  
+
+入口依赖，配置 `dependOn` 选项，这样可以在多个 `chunk` 之间共享模块。
+`配置dependOn后，构建好的chunk可以引入共享的模块，否则会将需要引入的模块构建打包到自身的chunk中`
+
+```js
+  const path = require('path');
+
+  module.exports = {
+    mode: 'development',
+    entry: {
+      index: {
+        import: './src/index.js',
+        dependOn: 'shared'
+      },
+      another: {
+        import: './src/another-module.js',
+        dependOn: 'shared'
+      },
+      shared: 'lodash'
+    },
+    output: {
+      filename: '[name].bundle.js',
+      path: path.resolve(__dirname, 'dist'),
+      clean: true
+    },
+    optimization: {
+      runtimeChunk: 'single',
+    },
+  };
+```
+
+或者通过插件 `splitChunks` 将公共的依赖模块提取生成新的chunk。
+
+```js
+  const path = require('path');
+
+module.exports = {
+  mode: 'development',
+  entry: {
+    index: './src/index.js',
+    another: './src/another-module.js',
+  },
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    clean: true
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
+};
 ```
