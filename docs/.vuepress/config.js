@@ -98,6 +98,48 @@ module.exports = {
         children: [
 
         ]
+      },
+      {
+        title: 'React',
+        children: [
+          {
+            title: '概念',
+            path: '/view/react/base'
+          },
+          {
+            title: 'JSX',
+            path: '/view/react/jsx'
+          },
+          {
+            title: '生命周期',
+            path: '/view/react/life-cycle'
+          },
+          {
+            title: '类组件与函数式组件',
+            path: '/view/react/component'
+          }
+        ]
+      },
+      {
+        title: '面试题',
+        children: [
+          {
+            title: 'es5、6',
+            path: '/view/interview/es56'
+          },
+          {
+            title: 'html5',
+            path: '/view/interview/html5'
+          },
+          {
+            title: 'less、scss',
+            path: '/view/interview/less'
+          },
+          {
+            title: 'gulp',
+            path: '/view/interview/gulp'
+          }
+        ]
       }
     ]
   }

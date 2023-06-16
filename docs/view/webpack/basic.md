@@ -1,9 +1,15 @@
 # Webpack  
 静态模块打包工具。
 
+__安装__
+
+```js
+npm install webpack webpack-cli --dev
+```
+
 __核心概念__  
-- 入口（entry)
-- 输出（output)
+- 入口(entry)
+- 输出(output)
 - laoder
 - 插件（plugin）
 - 模式（mode）
@@ -105,6 +111,31 @@ __webpack-dev-server__
       }
     }
   }
+```
+
+__babel-loader__
+
+babel是一个javascript编译器，可以将ES6 转化成ES5。在webpack里使用babel，需要使用babel-loader。
+
+```js
+npm install --dev babel-loader @babel/core @babel/preset-env
+
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.js$/i,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ["@babel/preset-env"]
+          }
+        }
+      }
+    ]
+  }
+}
 ```
 
 ## 代码分离  
